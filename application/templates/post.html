@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body_content %}
+<div class="form">
+	<form method="Post" action="">
+		{{ form.hidden_tag() }}
+		{{ form.title.label }}
+		{{ form.title }}
+		{% if form.title.errors %}
+		<div class="error">
+			{% for error in form.title.errors %}
+				<span style="color:red">{{ error }}</span>
+			{% endfor %}
+		{% endif %}
+		<br>
+		{{ form.content.label }}
+		{{ form.content }}
+		{% if form.content.errors %}
+		<div class="error">
+			{% for error in form.content.errors %}
+				<span style="color:red">{{ error }}</span>
+			{% endfor %}
+		{% endif %}
+		<br>
+		{{ form.submit }} <!-- submit the for onece detaila have been filled in -->
+
+	</form>
+</div>
+
+{% endblock body_content %}

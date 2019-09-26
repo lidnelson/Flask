@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body_content %}
+	<h1>Home Page</h1>
+	<p>Welcome! Enjoy your experience.</p>
+	{% for post in posts %} <!-- starting a for loop about the post list in routes -->
+		<div>
+			<h3>{{ post.title }}</h3> <!-- pulling data from post list @ title -->
+			<span> by <i> {{ post.author.first_name }} {{ post.author.last_name }}</i></span>
+			<p><span> Date posted: <i>{{ post.date_posted }}</i></span></p>
+			<p> -- {{ post.content }}</p>
+		</div>	
+	{% endfor %}
+{% endblock body_content %}

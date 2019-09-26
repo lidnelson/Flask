@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html> <!-- opens up html -->
+<head> <!-- opens head -->
+	<title>{{ title }} - Page</title>
+</head> <!-- closes head -->
+<body> <!-- opens body -->
+	<div class='navbar'>
+		{% if current_user.is_authenticated %}
+			<a href='/'>Home</a> <!-- creating a link -->
+			<a href='/about'>About Us</a> 
+			<a href='/post'>Post</a>
+			<a href='/logout'>Logout</a>
+			<a href='/account'>Update Account</a>
+		{% else %}
+			<a href='/'>Home</a> <!-- creating a link -->
+			<a href='/about'>About Us</a> 
+			<a href='/login'>Login</a>
+			<a href='/register'>Register</a>
+		{% endif %}
+	</div>
+	{% block body_content %}{% endblock %} <!-- body_content allows anything to be written -->
+</body> <!-- closes body -->
+</html> <!-- closes html -->
